@@ -18,7 +18,13 @@ def median(nums: list) -> int | float:
 
     Returns:
         Median.
+
+    Raises:
+        ValueError: If nums is empty.
     """
+    if not nums:
+        raise ValueError("median() requires at least one number")
+
     # The sorted function returns list[SupportsRichComparisonT@sorted]
     # which does not support `+`
     sorted_list: list[int] = sorted(nums)
